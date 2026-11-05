@@ -1,0 +1,116 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "infrastructure-observatory",
+  "type": "module",
+  "title": "Infrastructure Observatory",
+  "description": "Host resources, service discovery and observation quality in Raycast.",
+  "icon": "infrastructure-icon.png",
+  "author": "timsmykov",
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "categories": [
+    "Developer Tools",
+    "System"
+  ],
+  "commands": [
+    {
+      "name": "dashboard",
+      "title": "Infrastructure Dashboard",
+      "description": "Explore host resources, services and monitoring coverage",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "transport",
+      "title": "Connection",
+      "type": "dropdown",
+      "required": false,
+      "default": "demo",
+      "description": "Demo uses synthetic data and makes no network requests.",
+      "data": [
+        {
+          "title": "Demo \u00b7 synthetic infrastructure",
+          "value": "demo"
+        },
+        {
+          "title": "SSH \u00b7 existing access",
+          "value": "ssh"
+        },
+        {
+          "title": "HTTPS \u00b7 Grafana API",
+          "value": "https"
+        }
+      ]
+    },
+    {
+      "name": "sshHost",
+      "title": "SSH Alias",
+      "type": "textfield",
+      "required": false,
+      "default": "monitoring",
+      "description": "An existing alias from ~/.ssh/config."
+    },
+    {
+      "name": "grafanaUrl",
+      "title": "Grafana HTTPS URL",
+      "type": "textfield",
+      "required": false,
+      "description": "Required only for HTTPS connections."
+    },
+    {
+      "name": "token",
+      "title": "Grafana Read Token",
+      "type": "password",
+      "required": false,
+      "description": "HTTPS only. Use a scoped read token."
+    },
+    {
+      "name": "browserUrl",
+      "title": "Grafana Browser URL",
+      "type": "textfield",
+      "required": false,
+      "description": "Optional existing URL used by Open in Grafana actions."
+    },
+    {
+      "name": "datasource",
+      "title": "Prometheus Datasource UID",
+      "type": "textfield",
+      "required": false,
+      "default": "foundation"
+    },
+    {
+      "name": "centralHost",
+      "title": "Monitoring Host Label",
+      "type": "textfield",
+      "required": false,
+      "default": "monitoring-node",
+      "description": "Prometheus host label for shared monitoring-source and retention metrics."
+    }
+  ],
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build -e dist",
+    "bundle": "ray bundle",
+    "lint": "eslint src tests scripts && prettier --check src tests scripts package.json",
+    "format": "prettier --write src tests scripts package.json",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "demo": "tsx scripts/demo.ts"
+  },
+  "dependencies": {
+    "@raycast/api": "2.9.0",
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "2.2.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.9.0"
+  }
+}
