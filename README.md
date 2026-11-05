@@ -1,10 +1,12 @@
 # Infrastructure Observatory
 
-Explore host resources, discovered services and observation quality in a compact Raycast dashboard.
+A Raycast dashboard for understanding host resources, discovered services and the quality of the underlying observations. It brings collection, aggregation and visualization together so that missing or stale data stays visible.
+
+**My role:** I designed and implemented the collection and integration layer and the Raycast experience. [Explore the synthetic demo](https://timsmykov.github.io/infrastructure-observatory/) · [Read the case study](docs/case-study.md).
 
 ![Synthetic Linux dashboard in dark mode](demo/demo-linux-dark.svg)
 
-**Built by Tim Smykov.** I designed and implemented the collection/integration layer and Raycast experience using AI-assisted development. Prometheus, Grafana, Raycast and the operating-system exporters are existing upstream tools, credited below.
+Prometheus, Grafana, Raycast and the operating-system exporters are existing upstream tools, credited in [NOTICE](NOTICE.md).
 
 The project grew out of operating a small mixed infrastructure: a resource number is useful only if you can tell whether its source is fresh and its coverage is complete. The dashboard keeps resource state, service state and missing observations visible together.
 
