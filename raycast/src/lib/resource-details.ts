@@ -158,7 +158,8 @@ export function resourceSections(
         windows
           ? rows(s, "volumeInfo").find((r) => r.labels.volume === mount)?.labels
               .filesystem || "Filesystem type unavailable"
-          : `${fs.labels.device} · ${fs.labels.fstype}`,
+          : [fs.labels.device, fs.labels.fstype].filter(Boolean).join(" · ") ||
+              "Filesystem metadata unavailable",
         ro === 1 || error === 1,
       ),
     );

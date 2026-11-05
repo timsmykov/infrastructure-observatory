@@ -2,7 +2,7 @@
 
 Verified on 5 November 2026, Linux preparation host.
 
-- 29 TypeScript behavioral tests passed, including the existing 26 monitoring cases and three demo/configuration regressions.
+- 30 TypeScript behavioral tests passed, including the existing 26 monitoring cases and four demo/configuration/detail regressions.
 - TypeScript checking, ESLint/Prettier validation and the Raycast extension build passed.
 - Four Python collector/aggregation tests passed using mocked discovery and temporary files.
 - A real browser rendered the generated synthetic Linux preview and both visual themes were inspected. The preview uses the extension renderer; this is not native macOS UI acceptance.

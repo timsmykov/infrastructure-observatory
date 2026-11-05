@@ -126,7 +126,13 @@ export function demoSnapshot(
   };
   const mount = windows ? "C:" : "/";
   results.fsSize = {
-    series: [series(values.diskTotal, { mountpoint: mount })],
+    series: [
+      series(values.diskTotal, {
+        mountpoint: mount,
+        device: windows ? "C:" : "/dev/demo-root",
+        fstype: windows ? "NTFS" : "ext4",
+      }),
+    ],
   };
   results.fsAvailable = {
     series: [series(values.diskAvailable, { mountpoint: mount })],
