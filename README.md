@@ -8,6 +8,8 @@ Explore host resources, discovered services and observation quality in a compact
 
 The project grew out of operating a small mixed infrastructure: a resource number is useful only if you can tell whether its source is fresh and its coverage is complete. The dashboard keeps resource state, service state and missing observations visible together.
 
+[Open the synthetic browser demo](https://timsmykov.github.io/infrastructure-observatory/)
+
 ## Try the synthetic demo
 
 Requires Node.js 22 or newer, pnpm and Python 3.10 or newer. This path needs no accounts, tokens, servers or Raycast installation.
